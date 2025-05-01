@@ -1,0 +1,137 @@
+/* Apply basic layout and font */
+body {
+  font-family: 'Rubik', sans-serif;
+  background: linear-gradient(135deg, #f6f7fb, #edeafd);
+  margin: 0;
+  padding: 0;
+}
+
+/* Container setup */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Flex layout for info + form */
+.signup-wrapper {
+  display: flex;
+  max-width: 960px;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Left Info Section */
+.signup-info {
+  flex: 1;
+  padding: 2rem;
+  background: linear-gradient(to bottom right, #f9faff, #eef1fd);
+  color: #333;
+}
+
+.signup-info h2 {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.signup-info ul {
+  padding-left: 1rem;
+  list-style-type: disc;
+  margin-bottom: 1rem;
+}
+
+.signup-info a {
+  color: #6a1b9a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Right Form Section */
+.signup-form {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signup-form h2 {
+  font-size: 22px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.signup-form input {
+  margin-bottom: 1rem;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.create-account {
+  padding: 12px;
+  background: #00c48c;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.login-options {
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-options a {
+  color: #6a1b9a;
+  text-decoration: none;
+}
+
+.signup-form p {
+  text-align: center;
+  font-size: 14px;
+}
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above all other elements */
+}
+
+/* Blurred background */
+.blurred {
+  filter: blur(1px); /* Apply blur effect */
+  pointer-events: none; /* Disable interactions with blurred elements */
+}
+
+@media(max-width:768px){
+  .signup-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90%;
+    padding: 20px;
+  }
+  .signup-info{
+    display: none;
+  }
+  .checkbox{
+    font-size: 14px;
+  }
+}

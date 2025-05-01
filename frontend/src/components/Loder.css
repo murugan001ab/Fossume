@@ -1,0 +1,99 @@
+@keyframes loading-animation {
+    0% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }
+  
+  :root {
+    --min-size: 2px;
+    --max-size: 20px;
+    background-color: transparent;
+  }
+  
+
+  .loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    
+  }
+  
+  .dot {
+    background: #233875;
+    margin: 5px;
+    animation-name: loader;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+  .dot:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .dot:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .dot:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  .dot:nth-child(5) {
+    animation-delay: 0.6s;
+  }
+  .dot:nth-child(6) {
+    animation-delay: 1s;
+  }
+  .dot:nth-child(7) {
+    animation-delay: 1.2s;
+  }
+  .dot:nth-child(8) {
+    animation-delay: 1.5s;
+  }
+  .dot:nth-child(9) {
+    animation-delay: 2s;
+  }
+  
+  @keyframes loader {
+    from {
+      width: var(--min-size);
+      height: var(--min-size);
+      border-radius: calc(var(--min-size) / 2);
+    }
+    to {
+      width: 9px;
+      height: 9px;
+      border-radius: calc(var(--max-size) / 2);
+    }
+  }
+  
+  .videoCardGroup {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .videoCard {
+    margin: 20px;
+  }
+  .loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 2;
+  }

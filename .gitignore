@@ -1,0 +1,57 @@
+# === React (frontend/Frontend) ===
+/frontend/node_modules
+/frontend/build
+/frontend/dist
+/frontend/.env
+/frontend/.env.* # If you use .env.development etc.
+/frontend/.eslintcache
+/frontend/.DS_Store
+
+# === Django (backend/Backend) ===
+/backend/__pycache__/
+/backend/*.py[cod]
+/backend/db.sqlite3
+/backend/media/
+/backend/staticfiles/
+/backend/.env
+/backend/.DS_Store
+
+# Django migrations
+/backend/**/migrations/*.py
+/backend/**/migrations/*.pyc
+/backend/**/migrations/__pycache__/
+
+# === Python Envs ===
+.venv/
+venv/
+ENV/
+env/
+
+# === Logs ===
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+coverage.xml
+htmlcov/
+
+# === IDEs & Editors ===
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# === OS Files ===
+.DS_Store
+Thumbs.db
+
+# === Docker ===
+*.pid
+
+# === Optional Lock Files ===
+# Remove comment if you want to ignore lock files
+# yarn.lock
+# package-lock.json
+# Pipfile.lock
