@@ -13,6 +13,7 @@ import { Page404 } from "./components/Page404";
 import "./responsive.css"
 import Account from "./pages/Account";
 import ResumeLayout from "./Layout/ResumeLayout";
+import Dashboard from "./components/Dashboard";
 
 function App() {
 
@@ -22,7 +23,8 @@ function App() {
       <Route index element={<Home/>} />
       <Route path="builresume" element={<ResumeLayout/>} />
       <Route path="template" element={<Template/>}/>
-      <Route path="/account" element={<Account/>}/>
+      <Route path="account" element={<Account/>}/>
+      <Route path="dashboard" element={<Dashboard/>}/>
       <Route path="*" element={<Page404/>}/>
     </Route>
     <Route path="/login" element={<Login/>} />

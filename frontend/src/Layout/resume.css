@@ -1,0 +1,55 @@
+    .name{
+        /* background-color: aqua; */
+        width: 100%;
+        /* border: 1px solid green; */
+        border-radius: 5px;
+        user-select: text;
+        padding: 5px;
+        /* display: flex; */
+        position: relative;
+    }
+    .name.hovered{
+        /* background-color: bisque; */
+        border: 1px solid green;
+        background-color: aliceblue;
+        transition: all 0.4s ease;
+
+    }
+
+    .name .profilepic{
+        background-color: black;
+        width: 60px;
+        height: 60px;
+        /* display: flex; */
+        
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        border-radius: 50%;
+        /* flex-direction: row-reverse; */
+    }
+    input{
+        border: none;
+        outline: none;   
+    }
+    .username{
+        font-size: 26px;
+        width: 80%;
+    }
+    .role{
+        width: 80%;
+        font-size: 20px;
+        color: blueviolet;
+    }
+    .phone{
+        width:20%;
+    }
+    .email{
+        width: 20%;
+    }
+    .link{
+        width: 20%;
+    }
+    .location{
+        width: 20%;
+    }

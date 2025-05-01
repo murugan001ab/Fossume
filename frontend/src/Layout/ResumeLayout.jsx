@@ -6,6 +6,8 @@ import { PiDropHalfFill } from "react-icons/pi";
 import { HiTemplate } from "react-icons/hi";
 import { MdSwapVert,MdClose } from "react-icons/md";
 
+import "./resume.css"
+
 import "./resumelayout.css";
 import { useEffect } from "react";
 
@@ -76,6 +78,7 @@ const AddSection = ({setAddElement}) => {
           document.body.style.overflow = "auto";
         };
       }, []);
+
       const handleOverlayClick = (e) => {
         if (e.target.classList.contains("modal")) {
           setAddElement(false);
@@ -87,6 +90,7 @@ const AddSection = ({setAddElement}) => {
       <div className="modal-content">
         <h2>Add a new section</h2>
         <p>Click on a section to add it to your resume</p>
+
         <div className="grid">
           {sections.map((title) => (
             <div key={title} className="card">
@@ -110,15 +114,26 @@ const AddSection = ({setAddElement}) => {
 
 export const ResumeLayout = () => {
   const [addElement, setAddElement] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div className="page-container">
       {addElement && <AddSection setAddElement={setAddElement} />}
       <Sidebar setAddElement={setAddElement} />
       {/* <Template/> */}
-      <div className="resume">
-        <h1>Resume</h1>
-        <p>Resume content goes here...</p>
+      <div className={`resume ${isHovered ? "hovered" : ""}`}>
+        <div className={`name ${isHovered ? "hovered" : ""}`}
+        onClick={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}> 
+        <input type="text" value="Resume" className="username" name="username"/><br/>
+        <input type="text" value="Resume content goes here..|hereherehereherehere|hereherehereherehere." className="role" name="role" /><br/>
+        <input type="text" name="phone" className="phone" value="+917312345698" />
+        <input type="text" className="email" name="email" value="murugan001ab@gmail.com"/>
+        <input type="text" className="link" name="link"value="murugan001ab@gmail.com" />
+        <input type="text" className="location" name="location" value="chennai" />
+        <div className="profilepic">.</div>
+        </div>
+       
       </div>
     </div>
   );

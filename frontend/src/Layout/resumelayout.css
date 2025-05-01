@@ -5,6 +5,10 @@
   min-height: 100vh;
   background-color: #f0f0f0; /* light grey bg */
 }
+
+.resume.hovered{
+  background-color: antiquewhite;
+}
 .sidebar {
   align-self: flex-start;
   /* background-color: aqua; */
@@ -14,7 +18,8 @@
   width: 794px;
   height: 1123px;
   margin: 40px auto;
-  padding: 100px;
+  /* padding: 100px; */
+  padding:20px 20px ;
   background-color: white;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* soft shadow */
   border-radius: 4px; /* optional: rounded corners */
@@ -101,6 +106,9 @@
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
+    /* display: none;
+     */
+     /* background-color: #007bff; */
   }
   
   .modal-content h2 {

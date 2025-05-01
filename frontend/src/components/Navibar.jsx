@@ -42,7 +42,7 @@ export const Navibar = () => {
           <ul>
             {isLogged && (
               <li>
-                <NavLink to="documents" className="menu-item">
+                <NavLink to="dashboard" className="menu-item">
                   Documents
                 </NavLink>
               </li>
