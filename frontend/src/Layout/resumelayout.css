@@ -25,6 +25,7 @@
   border-radius: 4px; /* optional: rounded corners */
   /* background-color: aqua; */
   /* margin-left: 500px; */
+  background-color: #007bff;
 }
 .template {
   align-self: flex-start;
@@ -101,7 +102,7 @@
     background: white;
     border-radius: 10px;
     padding: 2rem;
-    max-width: 1000px;
+    max-width: 1500px;
     width: 90%;
     max-height: 90vh;
     overflow-y: auto;
@@ -125,7 +126,7 @@
   
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     gap: 1rem;
   }
   
@@ -137,6 +138,8 @@
     text-align: left;
     cursor: pointer;
     transition: 0.2s ease;
+    width: 430px;
+    height: 250px;
   }
   
   .card:hover {
@@ -164,4 +167,17 @@
     color: #333;
   }
 
-  
+  .modal-content.custom {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 1000px;
+    min-height: 410px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    /* display: none;
+     */
+     /* background-color: #007bff; */
+  }

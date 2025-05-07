@@ -42,19 +42,7 @@ class RegisterSerializer(serializers.ModelSerializer):
                 <h2>Hi {user.username},</h2>
                 <p>Thank you for registering on our website!</p>
                 <p>Please click the link below to verify your email address:</p>
-                <a href="{verification_link}" style="display: ind_and_load
-  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
-  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
-  File "/home/hacker/projects/pgproject/resume_project/user_auth/urls.py", line 3, in <module>
-    from .views import RegisterView, LoginView, VerifyEmailView
-  File "/home/hacker/projects/pgproject/resume_project/user_auth/views.py", line 7, in <module>
-    from .serializers import RegisterSerializer, LoginSerializer
-  File "/home/hacker/projects/pgproject/resume_project/user_auth/serializers.py", line 12, in <module>
-    from .models import Account
-ImportError: cannot import name 'Account' from 'user_auth.models' (/home/hacker/projects/pgproject/resume_project/user_auth/models.py)
-inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">Verify Email</a>
+                <a href="{verification_link}" style="display:inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">Verify Email</a>
                 <p>If you did not request this, please ignore this email.</p>
                 <p>Best regards,<br>The Team</p>
             </body>
