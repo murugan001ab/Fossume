@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.resume{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  display: grid;
+  grid-template-areas:
+  'nav nav nav'
+  'head head head'
+  'side main main'
+  'aside1 aside2 aside3'
+  'foot foot foot';
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 50px 150px 2fr 1fr 50px; 
+
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.div1{
+    background-color: #00ffbb; grid-area: head;}
+
+.div2{background-color: #499e6b;grid-area: side;
+}
+.div3{background-color: #ff00d9;grid-area: main;
+}
+.div4{background-color: #ffea00;grid-area: aside1;
+}
+.div5{background-color: #ff0015;grid-area: aside2;
+}
+.div6{background-color: #6a00ff;grid-area: aside3;
+}
+.div7{background-color: #ff0084;grid-area: foot;
+}
+.div8{background-color: #ff91f6;grid-area: nav;
+}
+
+
+    </style>
+</head>
+<body class="resume">
+    <div class="div1">.</div>
+    <div class="div2">.</div>
+    <div class="div3">.</div>
+    <div class="div4">.</div>
+    <div class="div5">.</div>
+    <div class="div6">.</div>
+    <div class="div7">.</div>
+    <div class="div8">.</div>
+ 
+</body>
+</html>

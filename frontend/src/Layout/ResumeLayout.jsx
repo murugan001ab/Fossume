@@ -4,13 +4,17 @@ import { useRef, useEffect, useState } from "react";
 import "./SideBar.css";
 import { PiDropHalfFill } from "react-icons/pi";
 import { HiTemplate } from "react-icons/hi";
-import { MdSwapVert, MdClose } from "react-icons/md";
+import { MdSwapVert, MdClose,MdAlternateEmail  } from "react-icons/md";
 import { IoChevronBackOutline } from "react-icons/io5";
+// import { FaLink } from "react-icons/fa6";
 
 import "./resume.css"
 
 import "./resumelayout.css";
 import "./Custom.css"
+
+import { CiLocationOn,CiPhone,CiLink, } from "react-icons/ci";
+
 
 const Sidebar = ({ setAddElement }) => {
   return (
@@ -53,7 +57,7 @@ const Template = () => {
     </div>
   );
 };
-const Custom = () => {
+const Custom = ({ setAddElement, setCustom }) => {
   const [sectionTitle, setSectionTitle] = useState("SECTION TITLE");
   const [fields, setFields] = useState({
     title: true,
@@ -65,11 +69,20 @@ const Custom = () => {
   const toggleField = (field) => {
     setFields((prev) => ({ ...prev, [field]: !prev[field] }));
   };
-
+  const handleOverlayClick = (e) => {
+    if (e.target.classList.contains("modal")) {
+      setAddElement(false);
+      //   console.log(e)
+    }
+  }
   return (
     <div className="modal" >
       <div className="modal-content custom">
-        <IoChevronBackOutline className="back" size={"20px"}/>
+        <IoChevronBackOutline className="back" size={"20px"} onClick={() => {
+          setAddElement(true)
+          setCustom(false)
+
+        }} />
 
         <h2>Custom Section</h2>
         <div className="custom-section-container">
@@ -77,11 +90,15 @@ const Custom = () => {
           <div className="custom-preview">
             <h3 className="sect">SectionTitle</h3>
             <div className="element">
-            {fields.title && <div><strong>Title</strong></div>}
-            {fields.date && <div><em>Date</em></div>}
-            {fields.description && <div className="des">Description</div>}
-           
-            
+              <div style={{ visibility: fields.title ? "visible" : "hidden" }}>
+                <strong>Title</strong>
+              </div>
+              <div style={{ visibility: fields.date ? "visible" : "hidden" }}>
+                <em>Date</em>
+              </div>
+              <div className="des" style={{ visibility: fields.description ? "visible" : "hidden" }}>
+                Description
+              </div>
             </div>
           </div>
 
@@ -100,9 +117,9 @@ const Custom = () => {
               <input type="checkbox" checked={fields.description} onChange={() => toggleField("description")} />
               Description
             </label>
-            
-           
-            
+
+
+
           </div>
 
 
@@ -116,7 +133,11 @@ const Custom = () => {
 
         <MdClose
           className="close"
-          onClick={() => setAddElement(false)}
+          onClick={() => {
+            setAddElement(false)
+            setCustom(false)
+
+          }}
         />
       </div>
     </div>
@@ -200,47 +221,56 @@ export const ResumeLayout = () => {
   const [custom, setCustom] = useState(false)
   const [isHovered, setIsHovered] = useState(false);
   const [value, setValue] = useState("");
-  const spanRef = useRef();
-  const inputRef = useRef();
+  // const spanRef = useRef();
+  // const inputRef = useRef();
 
-  useEffect(() => {
-    inputRef.current.style.width = spanRef.current.offsetWidth + "px";
-  }, [value]);
+  // useEffect(() => {
+  //   inputRef.current.style.width = spanRef.current.offsetWidth + "px";
+  // }, [value]);
+
+
+  const [userData, setUserData] = useState([]);
 
   return (
     <div className="page-container">
       {addElement && <AddSection setAddElement={setAddElement} setCustom={setCustom} />}
-      {custom && <Custom setCustom={setCustom} />}
+      {custom && <Custom setCustom={setCustom} setAddElement={setAddElement} />}
 
 
       <Sidebar setAddElement={setAddElement} />
       {/* <Template/> */}
-      <div className={`resume ${isHovered ? "hovered" : ""}`}>
-        <div className={`name ${isHovered ? "hovered" : ""}`}
-          onClick={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}>
-          <div type="text" value="Resume" className="username" name="username">  <input
-            ref={inputRef}
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            style={{ fontSize: "16px", padding: "5px", backgroundColor: 'red' }}
-          />
-            <span
-              ref={spanRef}
-              style={{ visibility: "hidden", position: "absolute", whiteSpace: "pre", fontSize: "16px", backgroundColor: 'yelo' }}
-            >
-              {value || " "}
-            </span></div>
-          <input type="text" value="Resume content goes here..|hereherehereherehere|hereherehereherehere." className="role" name="role" /><br />
-          <input type="text" name="phone" className="phone" value="+917312345698" />
-          <input type="text" className="email" name="email" value="murugan001ab@gmail.com" />
-          <input type="text" className="link" name="link" value="murugan001ab@gmail.com" />
-          <input type="text" className="location" name="location" value="chennai" />
-          <div className="profilepic">.</div>
+      <div className={`resume ${isHovered ? "hovered" : ""}`} >
+
+        <div className="head" contentEditable  >
+    
+          <div className="contact" >
+              <div className="rname">Your name</div>
+              <div className="role">what is yor rohhhhhhle ?</div>
+              <div className="contactdetail">
+                <div className="inner phone1"><CiPhone className="icon"/>7397174598</div>
+                <div className="inner email1"><MdAlternateEmail className="icon"/>muruganab011@gmail.com</div>
+                <div className="inner link1"><CiLink className="icon" />httphdffbvcrerjvww.com</div>
+                <div className="inner location1"><CiLocationOn className="icon"/>uttapybrbfshash</div>
+              </div>
+          </div>
+          <div className="image"></div> 
+    
         </div>
-        <div>
-          .
+
+
+        <div className="right"  >
+          <div className="education e1">  <button className="add-section-btn" onClick={() => setAddElement(true)}>
+          Add Section
+        </button>.</div>
+          <div className="education e3">.</div>
+          <div className="education e2">.</div>
+          <div className="education e4">.</div>
+          <div className="education e5">.</div>
+          <div className="education e6">. 
+          </div>
+
         </div>
+        <div className="left"  >helo3</div>
 
       </div>
 
